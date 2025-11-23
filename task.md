@@ -16,6 +16,8 @@
     - [x] Testimonials Section
         - [x] Hide temporarily (commented out)
     - [x] Contact Section
+        - [x] Implement EmailJS integration (Direct sending)
+        - [x] Add Phone Number input field
     - [x] Footer
         - [x] Rearrange layout (remove Legal, right-align Company)
 

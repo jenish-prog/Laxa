@@ -10,12 +10,12 @@ import v2 from '../assets/v2.jpg';
 const categories = ['All', 'Web', 'Video', 'AI'];
 
 const projects = [
-    { id: 1, title: 'E-Commerce Platform', category: 'Web', image: web1 },
+    { id: 1, title: 'Code visualizer', category: 'Web', image: web1 },
     { id: 2, title: 'Brand Documentary', category: 'Video', image: v1 },
-    { id: 3, title: 'AI Chatbot', category: 'AI', image: ai },
+    { id: 3, title: 'LLM', category: 'AI', image: ai },
     { id: 4, title: 'Portfolio Site', category: 'Web', image: portfolioSite },
     { id: 5, title: 'Product Launch', category: 'Video', image: v2 },
-    { id: 6, title: 'Data Analysis Tool', category: 'AI', image: ai2 },
+    { id: 6, title: 'AI Chatbot', category: 'AI', image: ai2 },
 ];
 
 const Portfolio = () => {
