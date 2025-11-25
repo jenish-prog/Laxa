@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
@@ -7,20 +7,36 @@ import Portfolio from './components/Portfolio';
 import Testimonials from './components/Testimonials';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import LoadingScreen from './components/LoadingScreen';
 
 function App() {
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    // Simulate loading time or wait for resources
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 2000); // Minimum 2 seconds loading time for smooth UX
+
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <div className="min-h-screen bg-white font-sans selection:bg-apple-blue selection:text-white">
-      <Navbar />
-      <main>
-        <Hero />
-        <About />
-        <Services />
-        <Portfolio />
-        {/* <Testimonials /> */}
-        <Contact />
-      </main>
-      <Footer />
+      <LoadingScreen isLoading={isLoading} />
+
+      <div className={`transition-opacity duration-700 ${isLoading ? 'opacity-0' : 'opacity-100'}`}>
+        <Navbar />
+        <main>
+          <Hero />
+          <About />
+          <Services />
+          <Portfolio />
+          {/* <Testimonials /> */}
+          <Contact />
+        </main>
+        <Footer />
+      </div>
     </div>
   );
 }
