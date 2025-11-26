@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import CEOImage from '../assets/CEO.jpg';
 
 const About = () => {
     return (
@@ -25,7 +26,7 @@ const About = () => {
                         </p>
                         <h3 className="text-2xl font-semibold mb-4 text-apple-dark">Our History</h3>
                         <p className="text-gray-600 leading-relaxed">
-                            Founded on the principles of simplicity and excellence, Laxa started as a small collective of designers and developers who wanted to bring the "Apple touch" to the broader web. Today, we help brands across the globe tell their stories with clarity and impact.
+                            Founded on the principles of simplicity and excellence, Laxa started as a small collective of designers and developers who wanted to bring the dream to the broader web. Today, we help brands across the globe tell their stories with clarity and impact.
                         </p>
                     </motion.div>
 
@@ -36,10 +37,11 @@ const About = () => {
                         transition={{ duration: 0.6 }}
                         className="relative h-96 rounded-2xl overflow-hidden shadow-xl"
                     >
-                        {/* Placeholder for team/office image - using a gradient for now to keep it clean */}
-                        <div className="absolute inset-0 bg-gradient-to-br from-gray-100 to-gray-300 flex items-center justify-center">
-                            <span className="text-gray-400 font-medium">Team Image / Office Shot</span>
-                        </div>
+                        <img
+                            src={CEOImage}
+                            alt="CEO"
+                            className="w-full h-full object-cover object-top"
+                        />
                     </motion.div>
                 </div>
             </div>
