@@ -9,6 +9,7 @@ import Testimonials from './components/Testimonials';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import LoadingScreen from './components/LoadingScreen';
+import SEO from './components/SEO';
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -24,6 +25,7 @@ function App() {
 
   return (
     <div className="min-h-screen bg-white font-sans selection:bg-apple-blue selection:text-white">
+      <SEO />
       <LoadingScreen isLoading={isLoading} />
 
       <div className={`transition-opacity duration-700 ${isLoading ? 'opacity-0' : 'opacity-100'}`}>

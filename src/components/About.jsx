@@ -39,7 +39,8 @@ const About = () => {
                     >
                         <img
                             src={CEOImage}
-                            alt="CEO"
+                            alt="CEO of Laxa Digital Agency"
+                            loading="lazy"
                             className="w-full h-full object-cover object-top"
                         />
                     </motion.div>
