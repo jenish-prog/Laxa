@@ -10,12 +10,60 @@ import v2 from '../assets/v2.jpg';
 const categories = ['All', 'Web', 'Video', 'AI'];
 
 const projects = [
-    { id: 1, title: 'Code visualizer', category: 'Web', image: web1 },
-    { id: 2, title: 'Brand Documentary', category: 'Video', image: v1 },
-    { id: 3, title: 'LLM', category: 'AI', image: ai },
-    { id: 4, title: 'Portfolio Site', category: 'Web', image: portfolioSite },
-    { id: 5, title: 'Product Launch', category: 'Video', image: v2 },
-    { id: 6, title: 'AI Chatbot', category: 'AI', image: ai2 },
+    {
+        id: 1,
+        title: 'Code visualizer',
+        category: 'Web',
+        image: web1,
+        description: 'Interactive learning tool for visualizing algorithms in real-time.',
+        stack: ['React', 'D3.js', 'Python'],
+        result: '5k+ Monthly Active Users'
+    },
+    {
+        id: 2,
+        title: 'Brand Documentary',
+        category: 'Video',
+        image: v1,
+        description: 'Cinematic storytelling for a sustainable fashion brand launch.',
+        stack: ['Premiere Pro', 'DaVinci Resolve'],
+        result: '150k+ Views in 48h'
+    },
+    {
+        id: 3,
+        title: 'LLM Integration',
+        category: 'AI',
+        image: ai,
+        description: 'Custom fine-tuned model for legal document analysis.',
+        stack: ['OpenAI', 'LangChain', 'Pinecone'],
+        result: 'Reduced processing time by 90%'
+    },
+    {
+        id: 4,
+        title: 'Portfolio Site',
+        category: 'Web',
+        image: portfolioSite,
+        description: 'A minimalist, high-performance portfolio for a senior designer.',
+        stack: ['Next.js', 'Framer Motion'],
+        result: '100/100 Lighthouse Score'
+    },
+    {
+        id: 5,
+        title: 'Product Launch',
+        category: 'Video',
+        image: v2,
+        description: 'High-energy commercial spot for a tech gadget release.',
+        stack: ['After Effects', 'Cinema 4D'],
+        result: '30% Conversion Uplift'
+    },
+    {
+        id: 6,
+        title: 'AI Chatbot',
+        category: 'AI',
+        image: ai2,
+        description: 'Customer service bot handling 1000+ queries daily.',
+        stack: ['Botpress', 'Node.js'],
+        result: 'Saved 40h/week support time'
+    },
 ];
 
 const Portfolio = () => {
@@ -79,6 +127,24 @@ const Portfolio = () => {
                         ))}
                     </AnimatePresence>
                 </motion.div>
+
+                {/* Secondary CTA */}
+                <div className="mt-20 py-12 px-6 bg-apple-dark rounded-3xl text-center relative overflow-hidden">
+                    <div className="relative z-10">
+                        <h3 className="text-2xl md:text-3xl font-bold text-white mb-4">Ready to build something amazing?</h3>
+                        <p className="text-gray-400 max-w-xl mx-auto mb-8">
+                            Whether you need a high-converting website or an AI automation system, we can help you scale.
+                        </p>
+                        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                            <a href="#contact" className="px-8 py-3 bg-white text-apple-dark font-bold rounded-full hover:bg-gray-100 transition-colors">
+                                Start a Project
+                            </a>
+                            <a href="#services" className="px-8 py-3 border border-white/20 text-white font-medium rounded-full hover:bg-white/10 transition-colors">
+                                View Services
+                            </a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
     );

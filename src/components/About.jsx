@@ -22,12 +22,11 @@ const About = () => {
                     >
                         <h3 className="text-2xl font-semibold mb-4 text-apple-dark">Our Mission</h3>
                         <p className="text-gray-600 leading-relaxed mb-6">
-                            At Laxa, our mission is to empower creators with AI tools that automate the boring stuff.
-                            We bridge the gap between complex code and creative freedom, building web experiences that don't just look good—they work for you.
+                            We bridge the gap between complex code and creative freedom. Our mission is to empower creators with AI tools that automate the boring stuff so you can focus on growth.
                         </p>
                         <h3 className="text-2xl font-semibold mb-4 text-apple-dark">Our Evolution</h3>
                         <p className="text-gray-600 leading-relaxed">
-                            Started as a design collective, we've evolved into a full-stack AI studio. Today, we help brands across the globe leverage artificial intelligence to scale their content and products without losing their human touch.
+                            From a design collective to a full-stack AI studio, we now help brands across the globe build fast Next.js websites and custom AI automation systems.
                         </p>
                     </motion.div>
 
