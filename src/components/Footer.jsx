@@ -31,10 +31,9 @@ const Footer = () => {
                     </p>
 
                     <div className="flex space-x-6">
-                        <a href="#" className="text-gray-400 hover:text-white transition-colors"><Twitter size={20} /></a>
-                        <a href="#" className="text-gray-400 hover:text-white transition-colors"><Linkedin size={20} /></a>
-                        <a href="#" className="text-gray-400 hover:text-white transition-colors"><Instagram size={20} /></a>
-                        <a href="#" className="text-gray-400 hover:text-white transition-colors"><Github size={20} /></a>
+                        <a href="https://www.linkedin.com/in/jenish-s-4aa3692b5" className="text-gray-400 hover:text-white transition-colors"><Linkedin size={20} /></a>
+                        <a href="https://www.instagram.com/__.laxa__?igsh=cmRuOWNnYzZoejBk" className="text-gray-400 hover:text-white transition-colors"><Instagram size={20} /></a>
+                        <a href="https://github.com/LAXATech" className="text-gray-400 hover:text-white transition-colors"><Github size={20} /></a>
                     </div>
                 </div>
             </div>

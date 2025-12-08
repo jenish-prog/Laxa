@@ -15,12 +15,8 @@ function App() {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    // Simulate loading time or wait for resources
-    const timer = setTimeout(() => {
-      setIsLoading(false);
-    }, 2000); // Minimum 2 seconds loading time for smooth UX
-
-    return () => clearTimeout(timer);
+    // Artificial delay removed for better UX
+    setIsLoading(false);
   }, []);
 
   return (
@@ -35,7 +31,7 @@ function App() {
           <About />
           <Services />
           <Portfolio />
-          {/* <Testimonials /> */}
+          <Testimonials />
           <Contact />
         </main>
         <Footer />

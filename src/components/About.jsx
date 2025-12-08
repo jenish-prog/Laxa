@@ -9,7 +9,7 @@ const About = () => {
                 <div className="text-center mb-16">
                     <h2 className="text-3xl md:text-4xl font-bold text-apple-dark mb-4">Who We Are</h2>
                     <p className="text-lg text-gray-500 max-w-2xl mx-auto">
-                        We are a team of visionaries, creators, and problem solvers dedicated to redefining the digital landscape.
+                        We are an AI web app studio building the next generation of digital tools for creators and startups.
                     </p>
                 </div>
 
@@ -22,11 +22,12 @@ const About = () => {
                     >
                         <h3 className="text-2xl font-semibold mb-4 text-apple-dark">Our Mission</h3>
                         <p className="text-gray-600 leading-relaxed mb-6">
-                            At Laxa, we believe that technology should feel natural. Our mission is to bridge the gap between complex code and human emotion. We don't just build websites; we create digital environments that people love to inhabit.
+                            At Laxa, our mission is to empower creators with AI tools that automate the boring stuff.
+                            We bridge the gap between complex code and creative freedom, building web experiences that don't just look good—they work for you.
                         </p>
-                        <h3 className="text-2xl font-semibold mb-4 text-apple-dark">Our History</h3>
+                        <h3 className="text-2xl font-semibold mb-4 text-apple-dark">Our Evolution</h3>
                         <p className="text-gray-600 leading-relaxed">
-                            Founded on the principles of simplicity and excellence, Laxa started as a small collective of designers and developers who wanted to bring the dream to the broader web. Today, we help brands across the globe tell their stories with clarity and impact.
+                            Started as a design collective, we've evolved into a full-stack AI studio. Today, we help brands across the globe leverage artificial intelligence to scale their content and products without losing their human touch.
                         </p>
                     </motion.div>
 

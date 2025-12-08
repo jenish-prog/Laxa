@@ -46,25 +46,86 @@ const Services = () => {
                     </p>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    {services.map((service, index) => (
-                        <motion.div
-                            key={index}
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.5, delay: index * 0.1 }}
-                            className="p-8 rounded-2xl bg-apple-gray hover:bg-white hover:shadow-xl transition-all duration-300 border border-transparent hover:border-gray-100 group"
-                        >
-                            <div className="mb-6 text-apple-blue transition-transform duration-300">
-                                {service.icon}
-                            </div>
-                            <h3 className="text-xl font-semibold text-apple-dark mb-3">{service.title}</h3>
-                            <p className="text-gray-500 leading-relaxed">
-                                {service.description}
-                            </p>
-                        </motion.div>
-                    ))}
+                <div className="space-y-16">
+                    {/* AI Tools Section */}
+                    <div>
+                        <div className="flex items-center gap-3 mb-8">
+                            <Bot className="w-8 h-8 text-apple-blue" />
+                            <h3 className="text-2xl font-bold text-apple-dark">AI Tools & Automation</h3>
+                        </div>
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                            <motion.div
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.5 }}
+                                className="p-6 rounded-2xl bg-apple-gray hover:bg-white hover:shadow-lg transition-all duration-300 border border-transparent hover:border-gray-100"
+                            >
+                                <h4 className="font-semibold text-lg mb-2">Workflow Automation</h4>
+                                <p className="text-gray-500 text-sm leading-relaxed">Custom bots that handle customer support, scheduling, and data entry 24/7.</p>
+                            </motion.div>
+                            <motion.div
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.5, delay: 0.1 }}
+                                className="p-6 rounded-2xl bg-apple-gray hover:bg-white hover:shadow-lg transition-all duration-300 border border-transparent hover:border-gray-100"
+                            >
+                                <h4 className="font-semibold text-lg mb-2">Content Generation</h4>
+                                <p className="text-gray-500 text-sm leading-relaxed">AI pipelines that repurpose your long-form video into blogs, tweets, and shorts.</p>
+                            </motion.div>
+                            <motion.div
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.5, delay: 0.2 }}
+                                className="p-6 rounded-2xl bg-apple-gray hover:bg-white hover:shadow-lg transition-all duration-300 border border-transparent hover:border-gray-100"
+                            >
+                                <h4 className="font-semibold text-lg mb-2">Smart Analytics</h4>
+                                <p className="text-gray-500 text-sm leading-relaxed">Dashboards that predict trends and visitor behavior using machine learning.</p>
+                            </motion.div>
+                        </div>
+                    </div>
+
+                    {/* For Creators Section */}
+                    <div>
+                        <div className="flex items-center gap-3 mb-8">
+                            <Video className="w-8 h-8 text-purple-600" />
+                            <h3 className="text-2xl font-bold text-apple-dark">For Creators & Brands</h3>
+                        </div>
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                            <motion.div
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.5 }}
+                                className="p-6 rounded-2xl bg-apple-gray hover:bg-white hover:shadow-lg transition-all duration-300 border border-transparent hover:border-gray-100"
+                            >
+                                <h4 className="font-semibold text-lg mb-2">High-Convert Websites</h4>
+                                <p className="text-gray-500 text-sm leading-relaxed">Landing pages designed psychologically to turn visitors into superfans.</p>
+                            </motion.div>
+                            <motion.div
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.5, delay: 0.1 }}
+                                className="p-6 rounded-2xl bg-apple-gray hover:bg-white hover:shadow-lg transition-all duration-300 border border-transparent hover:border-gray-100"
+                            >
+                                <h4 className="font-semibold text-lg mb-2">Cinematic Editing</h4>
+                                <p className="text-gray-500 text-sm leading-relaxed">Story-driven video editing that keeps retention high across YouTube and Reels.</p>
+                            </motion.div>
+                            <motion.div
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.5, delay: 0.2 }}
+                                className="p-6 rounded-2xl bg-apple-gray hover:bg-white hover:shadow-lg transition-all duration-300 border border-transparent hover:border-gray-100"
+                            >
+                                <h4 className="font-semibold text-lg mb-2">Growth Systems</h4>
+                                <p className="text-gray-500 text-sm leading-relaxed">End-to-end funnels that capture leads and nurture them automatically.</p>
+                            </motion.div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
