@@ -21,7 +21,11 @@ function App() {
 
   return (
     <div className="min-h-screen bg-white font-sans selection:bg-apple-blue selection:text-white">
-      <SEO />
+      <SEO
+        title="LaxaTech – AI-powered web & app studio"
+        description="We design and build AI-driven web apps, brand sites, and digital products for startups and creators."
+        keywords="AI web studio, web app development, startup tools, creator economy, React, Next.js"
+      />
       <LoadingScreen isLoading={isLoading} />
 
       <div className={`transition-opacity duration-700 ${isLoading ? 'opacity-0' : 'opacity-100'}`}>

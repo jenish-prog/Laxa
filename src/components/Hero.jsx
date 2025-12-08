@@ -18,8 +18,7 @@ const Hero = () => {
                         </span>
                     </h1>
                     <p className="mt-6 max-w-2xl mx-auto text-xl text-gray-500 leading-relaxed">
-                        We build tools and digital ecosystems that automate workflows and engage audiences.
-                        Stop building from scratch—start scaling with AI.
+                        We design and build AI-driven web apps, brand sites, and digital products for startups and creators.
                     </p>
 
                     <div className="mt-10 flex flex-col sm:flex-row justify-center gap-4">
@@ -27,13 +26,13 @@ const Hero = () => {
                             href="#contact"
                             className="px-8 py-3.5 text-base font-medium text-white bg-apple-dark rounded-full hover:bg-gray-800 transition-all transform hover:scale-105"
                         >
-                            Work with Us
+                            Start a Project
                         </a>
                         <a
-                            href="#services"
+                            href="#portfolio"
                             className="px-8 py-3.5 text-base font-medium text-apple-dark bg-gray-100 rounded-full hover:bg-gray-200 transition-all flex items-center justify-center gap-2 group"
                         >
-                            View AI Tools
+                            View Projects
                             <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
                         </a>
                     </div>
