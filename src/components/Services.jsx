@@ -87,6 +87,46 @@ const Services = () => {
                         </div>
                     </div>
 
+                    {/* Web & App Development Section */}
+                    <div>
+                        <div className="flex items-center gap-3 mb-8">
+                            <Globe className="w-8 h-8 text-blue-600" />
+                            <h3 className="text-2xl font-bold text-apple-dark">Web & App Development</h3>
+                        </div>
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                            <motion.div
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.5 }}
+                                className="p-6 rounded-2xl bg-apple-gray hover:bg-white hover:shadow-lg transition-all duration-300 border border-transparent hover:border-gray-100"
+                            >
+                                <h4 className="font-semibold text-lg mb-2">Website Building</h4>
+                                <p className="text-gray-500 text-sm leading-relaxed">High-performance websites and landing pages designed psychologically to turn visitors into customers.</p>
+                            </motion.div>
+                            <motion.div
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.5, delay: 0.1 }}
+                                className="p-6 rounded-2xl bg-apple-gray hover:bg-white hover:shadow-lg transition-all duration-300 border border-transparent hover:border-gray-100"
+                            >
+                                <h4 className="font-semibold text-lg mb-2">App Development</h4>
+                                <p className="text-gray-500 text-sm leading-relaxed">Native and cross-platform mobile applications designed for intuitive daily use.</p>
+                            </motion.div>
+                            <motion.div
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.5, delay: 0.2 }}
+                                className="p-6 rounded-2xl bg-apple-gray hover:bg-white hover:shadow-lg transition-all duration-300 border border-transparent hover:border-gray-100"
+                            >
+                                <h4 className="font-semibold text-lg mb-2">UI/UX Design</h4>
+                                <p className="text-gray-500 text-sm leading-relaxed">User-centric interfaces that are as beautiful as they are functional.</p>
+                            </motion.div>
+                        </div>
+                    </div>
+
                     {/* For Creators Section */}
                     <div>
                         <div className="flex items-center gap-3 mb-8">
@@ -101,8 +141,8 @@ const Services = () => {
                                 transition={{ duration: 0.5 }}
                                 className="p-6 rounded-2xl bg-apple-gray hover:bg-white hover:shadow-lg transition-all duration-300 border border-transparent hover:border-gray-100"
                             >
-                                <h4 className="font-semibold text-lg mb-2">High-Convert Websites</h4>
-                                <p className="text-gray-500 text-sm leading-relaxed">Landing pages designed psychologically to turn visitors into superfans.</p>
+                                <h4 className="font-semibold text-lg mb-2">Brand Strategy</h4>
+                                <p className="text-gray-500 text-sm leading-relaxed">Identity design and strategic positioning to help you stand out in a crowded market.</p>
                             </motion.div>
                             <motion.div
                                 initial={{ opacity: 0, y: 20 }}

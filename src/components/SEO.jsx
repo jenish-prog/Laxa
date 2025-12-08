@@ -1,7 +1,13 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
 
-const SEO = ({ title, description, keywords, name, type }) => {
+const SEO = ({
+    title = 'Laxa - Digital Design & Experience Agency',
+    description = 'Laxa is a premier digital agency specializing in web design, branding, and creating immersive digital experiences.',
+    keywords = 'digital agency, web design, branding, ui/ux, web development, creative agency',
+    name = 'Laxa',
+    type = 'website'
+}) => {
     return (
         <Helmet>
             { /* Standard metadata tags */}
@@ -26,13 +32,5 @@ const SEO = ({ title, description, keywords, name, type }) => {
         </Helmet>
     );
 }
-
-SEO.defaultProps = {
-    title: 'Laxa - Digital Design & Experience Agency',
-    description: 'Laxa is a premier digital agency specializing in web design, branding, and creating immersive digital experiences.',
-    keywords: 'digital agency, web design, branding, ui/ux, web development, creative agency',
-    name: 'Laxa',
-    type: 'website'
-};
 
 export default SEO;
