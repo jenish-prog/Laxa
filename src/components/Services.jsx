@@ -47,67 +47,6 @@ const Services = () => {
                 </div>
 
                 <div className="space-y-16">
-                    {/* AI Tools Section */}
-                    <div>
-                        <div className="flex items-center gap-3 mb-8">
-                            <Bot className="w-8 h-8 text-apple-blue" />
-                            <h3 className="text-2xl font-bold text-apple-dark">AI Tools & Automation</h3>
-                        </div>
-                        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                            <motion.div
-                                initial={{ opacity: 0, y: 20 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ duration: 0.5 }}
-                                className="p-6 rounded-2xl bg-apple-gray hover:bg-white hover:shadow-lg transition-all duration-300 border border-transparent hover:border-gray-100 flex flex-col"
-                            >
-                                <h4 className="font-semibold text-lg mb-2">Workflow Automation</h4>
-                                <p className="text-gray-500 text-sm leading-relaxed mb-4 flex-grow">
-                                    Custom bots that handle support and data entry 24/7, reducing manual work by 80%.
-                                </p>
-                                <div className="text-xs text-gray-400 mb-4 pt-4 border-t border-gray-100">
-                                    <p>Stack: OpenAI API, Zapier, Python</p>
-                                    <p>Starting at $1,500</p>
-                                </div>
-                                <a href="#contact" className="text-apple-blue font-medium text-sm hover:underline mt-auto">Learn more →</a>
-                            </motion.div>
-                            <motion.div
-                                initial={{ opacity: 0, y: 20 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ duration: 0.5, delay: 0.1 }}
-                                className="p-6 rounded-2xl bg-apple-gray hover:bg-white hover:shadow-lg transition-all duration-300 border border-transparent hover:border-gray-100 flex flex-col"
-                            >
-                                <h4 className="font-semibold text-lg mb-2">Content Generation</h4>
-                                <p className="text-gray-500 text-sm leading-relaxed mb-4 flex-grow">
-                                    AI pipelines that repurpose video into blogs and tweets automatically.
-                                </p>
-                                <div className="text-xs text-gray-400 mb-4 pt-4 border-t border-gray-100">
-                                    <p>Output: Blog, Social Posts, Newsletter</p>
-                                    <p>Timeline: 1 Week setup</p>
-                                </div>
-                                <a href="#contact" className="text-apple-blue font-medium text-sm hover:underline mt-auto">Learn more →</a>
-                            </motion.div>
-                            <motion.div
-                                initial={{ opacity: 0, y: 20 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ duration: 0.5, delay: 0.2 }}
-                                className="p-6 rounded-2xl bg-apple-gray hover:bg-white hover:shadow-lg transition-all duration-300 border border-transparent hover:border-gray-100 flex flex-col"
-                            >
-                                <h4 className="font-semibold text-lg mb-2">Smart Analytics</h4>
-                                <p className="text-gray-500 text-sm leading-relaxed mb-4 flex-grow">
-                                    Dashboards that predict trends using ML on your existing data.
-                                </p>
-                                <div className="text-xs text-gray-400 mb-4 pt-4 border-t border-gray-100">
-                                    <p>Stack: Python, Pandas, Streamlit</p>
-                                    <p>Timeline: 2-3 Weeks</p>
-                                </div>
-                                <a href="#contact" className="text-apple-blue font-medium text-sm hover:underline mt-auto">Learn more →</a>
-                            </motion.div>
-                        </div>
-                    </div>
-
                     {/* Web & App Development Section */}
                     <div>
                         <div className="flex items-center gap-3 mb-8">
@@ -163,6 +102,67 @@ const Services = () => {
                                 <div className="text-xs text-gray-400 mb-4 pt-4 border-t border-gray-100">
                                     <p>Output: Figma, Design System, Assets</p>
                                     <p>Timeline: 1-2 Weeks</p>
+                                </div>
+                                <a href="#contact" className="text-apple-blue font-medium text-sm hover:underline mt-auto">Learn more →</a>
+                            </motion.div>
+                        </div>
+                    </div>
+
+                    {/* AI Tools Section */}
+                    <div>
+                        <div className="flex items-center gap-3 mb-8">
+                            <Bot className="w-8 h-8 text-apple-blue" />
+                            <h3 className="text-2xl font-bold text-apple-dark">AI Tools & Automation</h3>
+                        </div>
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                            <motion.div
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.5 }}
+                                className="p-6 rounded-2xl bg-apple-gray hover:bg-white hover:shadow-lg transition-all duration-300 border border-transparent hover:border-gray-100 flex flex-col"
+                            >
+                                <h4 className="font-semibold text-lg mb-2">Workflow Automation</h4>
+                                <p className="text-gray-500 text-sm leading-relaxed mb-4 flex-grow">
+                                    Custom bots that handle support and data entry 24/7, reducing manual work by 80%.
+                                </p>
+                                <div className="text-xs text-gray-400 mb-4 pt-4 border-t border-gray-100">
+                                    <p>Stack: OpenAI API, Zapier, Python</p>
+                                    <p>Starting at $1,500</p>
+                                </div>
+                                <a href="#contact" className="text-apple-blue font-medium text-sm hover:underline mt-auto">Learn more →</a>
+                            </motion.div>
+                            <motion.div
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.5, delay: 0.1 }}
+                                className="p-6 rounded-2xl bg-apple-gray hover:bg-white hover:shadow-lg transition-all duration-300 border border-transparent hover:border-gray-100 flex flex-col"
+                            >
+                                <h4 className="font-semibold text-lg mb-2">Content Generation</h4>
+                                <p className="text-gray-500 text-sm leading-relaxed mb-4 flex-grow">
+                                    AI pipelines that repurpose video into blogs and tweets automatically.
+                                </p>
+                                <div className="text-xs text-gray-400 mb-4 pt-4 border-t border-gray-100">
+                                    <p>Output: Blog, Social Posts, Newsletter</p>
+                                    <p>Timeline: 1 Week setup</p>
+                                </div>
+                                <a href="#contact" className="text-apple-blue font-medium text-sm hover:underline mt-auto">Learn more →</a>
+                            </motion.div>
+                            <motion.div
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.5, delay: 0.2 }}
+                                className="p-6 rounded-2xl bg-apple-gray hover:bg-white hover:shadow-lg transition-all duration-300 border border-transparent hover:border-gray-100 flex flex-col"
+                            >
+                                <h4 className="font-semibold text-lg mb-2">Smart Analytics</h4>
+                                <p className="text-gray-500 text-sm leading-relaxed mb-4 flex-grow">
+                                    Dashboards that predict trends using ML on your existing data.
+                                </p>
+                                <div className="text-xs text-gray-400 mb-4 pt-4 border-t border-gray-100">
+                                    <p>Stack: Python, Pandas, Streamlit</p>
+                                    <p>Timeline: 2-3 Weeks</p>
                                 </div>
                                 <a href="#contact" className="text-apple-blue font-medium text-sm hover:underline mt-auto">Learn more →</a>
                             </motion.div>

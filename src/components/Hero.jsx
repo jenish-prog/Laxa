@@ -20,6 +20,9 @@ const Hero = () => {
                     <p className="mt-6 max-w-2xl mx-auto text-xl text-gray-500 leading-relaxed">
                         We design and build AI-driven web apps, brand sites, and digital products for startups and creators.
                     </p>
+                    <p className="mt-4 max-w-xl mx-auto text-base text-gray-400">
+                        Stop building from scratch we help you scale with custom digital tools and workflows.
+                    </p>
 
                     <div className="mt-10 flex flex-col sm:flex-row justify-center gap-4">
                         <a
