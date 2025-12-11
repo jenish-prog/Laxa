@@ -51,5 +51,5 @@ You don't have to wait for Google to crawl your site automatically. You can forc
 **Q: My site is a generic "React App" in search results?**
 A: Make sure you update the `<title>` and `<meta name="description">` in your `index.html` or use the `SEO` component in your React code (which you are already doing).
 
-**Q: How do I know if I'm indexed?**
-A: Go to Google and search for `site:laxa.agency`. If your site shows up, you are indexed!
+**Q: How do I get my logo next to my URL in search results?**
+A: I have already configured your `index.html` with the correct `apple-touch-icon` and `icon` tags pointing to your new logo. Google looks for these automatically. **Note:** It can take several days or weeks for Google to update the icon in search results after you redeploy.
