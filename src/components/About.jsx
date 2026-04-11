@@ -1,6 +1,33 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import CEOImage from '../assets/CEO.jpg';
+import CEOImage from '../assets/j.jpg';
+import MemberTwoImage from '../assets/a.jpeg?t=1';
+import MemberThreeImage from '../assets/h.jpeg';
+
+const teamMembers = [
+    {
+        label: 'Member 01',
+        name: 'JENISH',
+        role: 'Full Stack Developer',
+        image: CEOImage,
+        imagePosition: 'center 45%',
+        imageScale: '1.2',
+    },
+    {
+        label: 'Member 02',
+        name: 'ANJAI',
+        role: 'Deployment Process & Cybersecurity',
+        image: MemberTwoImage,
+        imagePosition: 'center 20%',
+    },
+    {
+        label: 'Member 03',
+        name: 'HAMDHAN HUSSAIN',
+        role: 'Client Outreach',
+        image: MemberThreeImage,
+        imagePosition: 'center 52%',
+    },
+];
 
 const About = () => {
     return (
@@ -13,39 +40,33 @@ const About = () => {
                     </p>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-                    <motion.div
-                        initial={{ opacity: 0, x: -20 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.6 }}
-                    >
-                        <h3 className="text-2xl font-semibold mb-4 text-apple-dark">Our Mission</h3>
-                        <p className="text-gray-600 leading-relaxed mb-6">
-                            We bridge the gap between complex code and creative freedom. Our mission is to empower creators with AI tools that automate the boring stuff so you can focus on growth.
-                        </p>
-                        <h3 className="text-2xl font-semibold mb-4 text-apple-dark">Our Evolution</h3>
-                        <p className="text-gray-600 leading-relaxed">
-                            From a design collective to a full-stack AI studio, we now help brands across the globe build fast Next.js websites and custom AI automation systems.
-                        </p>
-                    </motion.div>
-
-                    <motion.div
-                        initial={{ opacity: 0, x: 20 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.6 }}
-                        className="relative h-96 rounded-2xl overflow-hidden shadow-xl"
-                    >
-                        <img
-                            src={CEOImage}
-                            alt="CEO of Laxa Digital Agency"
-                            loading="lazy"
-                            className="w-full h-full object-cover object-top"
-                        />
-                    </motion.div>
-                </div>
-
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6 }}
+                    className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch"
+                >
+                    {teamMembers.map((member) => (
+                        <div key={member.name} className="rounded-2xl bg-white p-5 shadow-lg h-full flex flex-col">
+                            <div className="w-full aspect-[4/3] overflow-hidden rounded-xl mb-4">
+                                <img
+                                    src={member.image}
+                                    alt={member.name}
+                                    loading="lazy"
+                                    className="h-full w-full object-cover"
+                                    style={{ 
+                                        objectPosition: member.imagePosition,
+                                        transform: member.imageScale ? `scale(${member.imageScale})` : 'none'
+                                    }}
+                                />
+                            </div>
+                            <p className="text-sm font-medium text-gray-400 mb-1">{member.label}</p>
+                            <h3 className="text-xl font-semibold text-apple-dark">{member.name}</h3>
+                            <p className="text-gray-600">{member.role}</p>
+                        </div>
+                    ))}
+                </motion.div>
             </div>
         </section>
     );

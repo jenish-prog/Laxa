@@ -8,6 +8,7 @@ import Portfolio from './components/Portfolio';
 import Testimonials from './components/Testimonials';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import ChatBot from './components/ChatBot';
 import LoadingScreen from './components/LoadingScreen';
 import SEO from './components/SEO';
 
@@ -39,6 +40,7 @@ function App() {
           <Contact />
         </main>
         <Footer />
+        <ChatBot />
         <Analytics />
       </div>
     </div>
