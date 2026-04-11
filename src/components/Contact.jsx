@@ -1,41 +1,123 @@
-import React, { useRef, useState } from 'react';
-import { Mail, Phone, MapPin, Send, Loader2 } from 'lucide-react';
-import emailjs from '@emailjs/browser';
+import { useRef, useState } from 'react';
+import { Mail, Phone, MapPin, Send, Loader2, CheckCircle, XCircle } from 'lucide-react';
+
+const validateEmail = (email) => {
+    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return re.test(email);
+};
+
+const validatePhone = (phone) => {
+    if (!phone) return true;
+    const re = /^[\d\s\-+()]{10,}$/;
+    return re.test(phone);
+};
 
 const Contact = () => {
     const form = useRef();
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [success, setSuccess] = useState(false);
     const [error, setError] = useState(false);
+    const [errorMessage, setErrorMessage] = useState('');
+    const [formData, setFormData] = useState({
+        user_name: '',
+        user_email: '',
+        phone: '',
+        subject: '',
+        message: ''
+    });
+    const [validationErrors, setValidationErrors] = useState({});
 
-    const sendEmail = (e) => {
+    const handleInputChange = (e) => {
+        const { name, value } = e.target;
+        setFormData(prev => ({ ...prev, [name]: value }));
+        if (validationErrors[name]) {
+            setValidationErrors(prev => ({ ...prev, [name]: '' }));
+        }
+    };
+
+    const validateForm = () => {
+        const errors = {};
+        if (!formData.user_name.trim()) {
+            errors.user_name = 'Name is required';
+        }
+        if (!formData.user_email.trim()) {
+            errors.user_email = 'Email is required';
+        } else if (!validateEmail(formData.user_email)) {
+            errors.user_email = 'Please enter a valid email';
+        }
+        if (formData.phone && !validatePhone(formData.phone)) {
+            errors.phone = 'Please enter a valid phone number';
+        }
+        if (!formData.subject.trim()) {
+            errors.subject = 'Subject is required';
+        }
+        if (!formData.message.trim()) {
+            errors.message = 'Message is required';
+        } else if (formData.message.trim().length < 10) {
+            errors.message = 'Message must be at least 10 characters';
+        }
+        return errors;
+    };
+
+    const sendEmail = async (e) => {
         e.preventDefault();
         setIsSubmitting(true);
         setSuccess(false);
         setError(false);
+        setErrorMessage('');
 
-        // REPLACE THESE WITH YOUR ACTUAL EMAILJS KEYS
-        // Sign up at https://www.emailjs.com/
-        const SERVICE_ID = 'service_dsnkl7m';
-        const TEMPLATE_ID = 'template_jcmz8xs';
-        const PUBLIC_KEY = 'ipT-OoYyUC_Eg1AOv';
+        const errors = validateForm();
+        if (Object.keys(errors).length > 0) {
+            setValidationErrors(errors);
+            setIsSubmitting(false);
+            return;
+        }
 
-        emailjs
-            .sendForm(SERVICE_ID, TEMPLATE_ID, form.current, {
-                publicKey: PUBLIC_KEY,
-            })
-            .then(
-                () => {
-                    setSuccess(true);
-                    setIsSubmitting(false);
-                    form.current.reset();
+        try {
+            const formDataJSON = {
+                name: formData.user_name,
+                email: formData.user_email, // This triggers FormSubmit's auto-reply
+                phone: formData.phone || 'Not provided',
+                subject: formData.subject,
+                message: formData.message,
+                _subject: "New Mail from LaxaTech Website",
+                _autoresponse: "Thank you for reaching out! Our team will contact you soon.",
+                _template: "table",
+                _captcha: "false"
+            };
+
+            const response = await fetch("https://formsubmit.co/ajax/jenish112005@gmail.com", {
+                method: "POST",
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
                 },
-                (error) => {
-                    console.error('FAILED...', error.text);
-                    setError(true);
-                    setIsSubmitting(false);
-                },
-            );
+                body: JSON.stringify(formDataJSON)
+            });
+
+            const result = await response.json();
+
+            if (result.success === "true" || response.ok) {
+                setSuccess(true);
+                form.current.reset();
+                setFormData({
+                    user_name: '',
+                    user_email: '',
+                    phone: '',
+                    subject: '',
+                    message: ''
+                });
+            } else {
+                console.error("FormSubmit response:", result);
+                throw new Error("Failed to send");
+            }
+        } catch (err) {
+            console.error('Email send failed', err);
+            setError(true);
+            setErrorMessage('Failed to send message. Please try again or email us directly at jenish112005@gmail.com');
+        } finally {
+            setIsSubmitting(false);
+        }
     };
 
     return (
@@ -43,10 +125,10 @@ const Contact = () => {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
                     <div>
-                        <h2 className="text-3xl md:text-4xl font-bold text-apple-dark mb-6">Let's Build Together</h2>
+                        <h2 className="text-3xl md:text-4xl font-bold text-apple-dark mb-6">Let&apos;s Build Together</h2>
                         <p className="text-lg text-gray-500 mb-8 leading-relaxed">
-                            Ready to start your next project? We'd love to hear from you.
-                            Tell us about your vision, and we'll help you bring it to life.
+                            Ready to start your next project? We&apos;d love to hear from you.
+                            Tell us about your vision, and we&apos;ll help you bring it to life.
                         </p>
 
                         <div className="space-y-6">
@@ -80,9 +162,14 @@ const Contact = () => {
                                         type="text"
                                         name="user_name"
                                         required
-                                        className="w-full px-4 py-3 rounded-xl bg-gray-50 border-transparent focus:border-apple-blue focus:bg-white focus:ring-0 transition-colors"
+                                        value={formData.user_name}
+                                        onChange={handleInputChange}
+                                        className={`w-full px-4 py-3 rounded-xl bg-gray-50 border-transparent focus:border-apple-blue focus:bg-white focus:ring-0 transition-colors ${validationErrors.user_name ? 'border-red-500 ring-1 ring-red-500' : ''}`}
                                         placeholder="John Doe"
                                     />
+                                    {validationErrors.user_name && (
+                                        <p className="mt-1 text-xs text-red-500">{validationErrors.user_name}</p>
+                                    )}
                                 </div>
                                 <div>
                                     <label htmlFor="user_email" className="block text-sm font-medium text-gray-700 mb-2">Email</label>
@@ -90,18 +177,28 @@ const Contact = () => {
                                         type="email"
                                         name="user_email"
                                         required
-                                        className="w-full px-4 py-3 rounded-xl bg-gray-50 border-transparent focus:border-apple-blue focus:bg-white focus:ring-0 transition-colors"
+                                        value={formData.user_email}
+                                        onChange={handleInputChange}
+                                        className={`w-full px-4 py-3 rounded-xl bg-gray-50 border-transparent focus:border-apple-blue focus:bg-white focus:ring-0 transition-colors ${validationErrors.user_email ? 'border-red-500 ring-1 ring-red-500' : ''}`}
                                         placeholder="john@example.com"
                                     />
+                                    {validationErrors.user_email && (
+                                        <p className="mt-1 text-xs text-red-500">{validationErrors.user_email}</p>
+                                    )}
                                 </div>
                                 <div>
                                     <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">Phone Number</label>
                                     <input
                                         type="tel"
                                         name="phone"
-                                        className="w-full px-4 py-3 rounded-xl bg-gray-50 border-transparent focus:border-apple-blue focus:bg-white focus:ring-0 transition-colors"
+                                        value={formData.phone}
+                                        onChange={handleInputChange}
+                                        className={`w-full px-4 py-3 rounded-xl bg-gray-50 border-transparent focus:border-apple-blue focus:bg-white focus:ring-0 transition-colors ${validationErrors.phone ? 'border-red-500 ring-1 ring-red-500' : ''}`}
                                         placeholder="+1 (555) 000-0000"
                                     />
+                                    {validationErrors.phone && (
+                                        <p className="mt-1 text-xs text-red-500">{validationErrors.phone}</p>
+                                    )}
                                 </div>
                                 <div>
                                     <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-2">Subject</label>
@@ -109,9 +206,14 @@ const Contact = () => {
                                         type="text"
                                         name="subject"
                                         required
-                                        className="w-full px-4 py-3 rounded-xl bg-gray-50 border-transparent focus:border-apple-blue focus:bg-white focus:ring-0 transition-colors"
+                                        value={formData.subject}
+                                        onChange={handleInputChange}
+                                        className={`w-full px-4 py-3 rounded-xl bg-gray-50 border-transparent focus:border-apple-blue focus:bg-white focus:ring-0 transition-colors ${validationErrors.subject ? 'border-red-500 ring-1 ring-red-500' : ''}`}
                                         placeholder="Project Inquiry"
                                     />
+                                    {validationErrors.subject && (
+                                        <p className="mt-1 text-xs text-red-500">{validationErrors.subject}</p>
+                                    )}
                                 </div>
                             </div>
                             <div>
@@ -120,20 +222,27 @@ const Contact = () => {
                                     name="message"
                                     required
                                     rows={4}
-                                    className="w-full px-4 py-3 rounded-xl bg-gray-50 border-transparent focus:border-apple-blue focus:bg-white focus:ring-0 transition-colors resize-none"
+                                    value={formData.message}
+                                    onChange={handleInputChange}
+                                    className={`w-full px-4 py-3 rounded-xl bg-gray-50 border-transparent focus:border-apple-blue focus:bg-white focus:ring-0 transition-colors resize-none ${validationErrors.message ? 'border-red-500 ring-1 ring-red-500' : ''}`}
                                     placeholder="Tell us about your project..."
                                 />
+                                {validationErrors.message && (
+                                    <p className="mt-1 text-xs text-red-500">{validationErrors.message}</p>
+                                )}
                             </div>
 
                             {success && (
-                                <div className="p-4 bg-green-50 text-green-600 rounded-xl text-sm font-medium">
-                                    Message sent successfully! We'll get back to you soon.
+                                <div className="p-4 bg-green-50 text-green-600 rounded-xl text-sm font-medium flex items-center gap-2">
+                                    <CheckCircle size={18} />
+                                    Message sent successfully! Check your email for confirmation. We&apos;ll get back to you soon.
                                 </div>
                             )}
 
                             {error && (
-                                <div className="p-4 bg-red-50 text-red-600 rounded-xl text-sm font-medium">
-                                    Something went wrong. Please try again later or email us directly.
+                                <div className="p-4 bg-red-50 text-red-600 rounded-xl text-sm font-medium flex items-center gap-2">
+                                    <XCircle size={18} />
+                                    {errorMessage}
                                 </div>
                             )}
 
