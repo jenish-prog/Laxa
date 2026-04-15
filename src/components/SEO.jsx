@@ -2,10 +2,10 @@ import React from 'react';
 import { Helmet } from 'react-helmet-async';
 
 const SEO = ({
-    title = 'Laxa - Digital Design & Experience Agency',
-    description = 'Laxa is a premier digital agency specializing in web design, branding, and creating immersive digital experiences.',
-    keywords = 'digital agency, web design, branding, ui/ux, web development, creative agency',
-    name = 'Laxa',
+    title = 'Laxa Tech | Web Design & Development Agency in Kanyakumari, Tamil Nadu',
+    description = 'Laxa Tech is a digital design and web development agency offering custom websites, UI/UX design, and full-stack solutions for businesses across India. Based in Tamil Nadu.',
+    keywords = 'web design agency Tamil Nadu, website development Kanyakumari, affordable web development India, freelance React developer, UI UX design agency South India, Laxa Tech',
+    name = 'Laxa Tech',
     type = 'website'
 }) => {
     return (
