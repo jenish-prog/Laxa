@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://laxatech.tech/sitemap.xml
+Sitemap: https://www.laxatech.tech/sitemap.xml
